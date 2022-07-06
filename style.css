@@ -9,22 +9,24 @@
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 1440px;
+    position: relative;
+    max-height: 100vh;
+    width: 100%;
 }
 
 .card {
     position: relative;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 3rem;
-    width: 75%;
+    max-width: 100%;
 }
 
 .columns {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex: 0 0 100%;
     max-width: 60%;
 }
@@ -116,12 +118,16 @@ button {
     color: var(--bg-h-btn);
 }
 
-@media(max-width:375px) {
+@media(max-width:840px) {
     .card {
-        height: 100vh;
+        position: relative;
+        min-height: 100vh;
+        min-width: 100%;
     }
     .columns {
-        display: block;
+        position: relative;
+        flex-direction: column;
+        margin: auto;
     }
     .sedans {
         border-top-right-radius: 0.5rem;
@@ -142,5 +148,12 @@ button {
     }
     button {
         margin-bottom: 0;
+        margin: auto;
+    }
+}
+
+@media (max-width:1000px) {
+    .card {
+        max-width: 75%;
     }
 }
